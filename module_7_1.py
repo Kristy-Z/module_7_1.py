@@ -7,7 +7,7 @@ class Product:
         self.weight = float(weight)
         self.category = str(category)
 
-    def __str__(self, name, weight, category):
+    def __str__(self):
         return f'{self.name}, {self.weight}, {self.category}'
 
 
@@ -27,9 +27,10 @@ class Shop:
         for i in products:
             if current_products not in file:
                 file.write(f'{i}\n')
-                file.close()
             else:
                 print(f'Продукт {i} уже есть в магазине')
+
+        file.close()
 
 s1 = Shop()
 p1 = Product('Potato', 50.5, 'Vegetables')
